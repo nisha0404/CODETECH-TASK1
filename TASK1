@@ -1,0 +1,39 @@
+import numpy as np
+import pandas as pd
+
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+
+#read the database
+data = pd.read_csv("Bigfoot_cleaned.csv")
+
+#display the first five line
+data.head()
+
+#display the last five rows
+data.tail()
+
+#rondom data
+data.sample(10)
+
+#random data
+data.sample(frac=0.1)
+
+#information about data
+data.info()
+#shows the analysis of numerical values
+data.describe
+
+#shows the datatype in the dataset
+data.dtypes
+#find the duplicates
+data.duplicated().sum()
+#to identify if there are any null values
+data.isnull().values.any()
+#show the cloumn the null value
+data.isnull().sum()
+data.replace(np.nan,0)
+sns.pairplot(data)
+data['County'].value_counts()
